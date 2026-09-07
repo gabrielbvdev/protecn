@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protecn Segurança e Automação | Início</title>
+    <meta name="description" content="Desenvolvendo cadeias de segurança e automação desde 1993. Proteja seu patrimônio com a Protecn.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuração do Tailwind e CSS Customizado -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#002855', // Azul Marinho clássico de segurança
+                            light: '#003F88',
+                            dark: '#001833',
+                            accent: '#F2A900', // Amarelo/Dourado para alertas e botões
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animação para o carrossel infinito de clientes */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+        }
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Overlay gradiente para a imagem principal */
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 40, 85, 0.95) 0%, rgba(0, 40, 85, 0.7) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Navegação -->
+    <nav class="bg-white/95 backdrop-blur-md fixed w-full z-50 border-b border-gray-200 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24 transition-all duration-300">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-extrabold text-brand-blue tracking-tight">
+                        PROTECN<span class="text-brand-accent">.</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="index.html" class="text-brand-blue font-bold hover:text-brand-accent transition-colors">Início</a>
+                    <a href="sobre.html" class="text-gray-600 font-medium hover:text-brand-blue transition-colors">Quem Somos</a>
+                    <a href="contato.html" class="text-gray-600 font-medium hover:text-brand-blue transition-colors">Contato</a>
+                    
+                    <!-- Botão WhatsApp Navbar -->
+                    <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-white px-6 py-3 rounded-md font-bold hover:bg-brand-light transition-colors shadow-md flex items-center gap-2 group">
+                        <!-- SVG WhatsApp Icon -->
+                        <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                        </svg>
+                        Falar no WhatsApp
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-brand-blue hover:text-brand-accent focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-4 pb-8 space-y-3">
+                <a href="index.html" class="block px-4 py-3 rounded-md text-base font-bold text-brand-blue bg-blue-50">Início</a>
+                <a href="sobre.html" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Quem Somos</a>
+                <a href="contato.html" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Contato</a>
+                
+                <!-- Botão WhatsApp Mobile -->
+                <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="block w-full text-center mt-6 bg-brand-blue text-white px-5 py-4 rounded-md font-bold hover:bg-brand-light shadow-md flex justify-center items-center gap-2">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                    Falar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-24">
+        <!-- Hero Section com Imagem -->
+        <section class="relative bg-brand-dark text-white py-32 lg:py-48 overflow-hidden">
+            <!-- Imagem de Fundo -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Equipamentos de segurança e servidores" class="w-full h-full object-cover object-center opacity-60" />
+            </div>
+            <!-- Overlay escuro -->
+            <div class="absolute inset-0 hero-overlay z-0"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-accent/20 text-brand-accent font-bold tracking-wider uppercase text-xs mb-6 border border-brand-accent/30">
+                        Tecnologia desde 1993
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-white">
+                        Proteger, <br>sistematizar e <br>
+                        <span class="text-brand-accent">automatizar.</span>
+                    </h1>
+                    <p class="mt-4 text-lg md:text-2xl text-gray-200 mb-10 font-light leading-relaxed max-w-2xl">
+                        Garantimos a preservação da sua integridade e do seu patrimônio através de sistemas integrados, inteligentes e de fácil gestão.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="bg-brand-accent text-brand-dark font-extrabold px-8 py-4 rounded-md hover:bg-yellow-400 transition-colors shadow-lg flex items-center justify-center gap-2 text-lg">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                            </svg>
+                            Falar com Especialista
+                        </a>
+                        <a href="#servicos" class="bg-white/10 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-md hover:bg-white/20 transition-colors border border-white/30 flex items-center justify-center text-lg">
+                            Ver Soluções
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrossel de Clientes (Prova Social) -->
+        <section class="bg-white py-10 border-b border-gray-200 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+                <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-widest">Grandes empresas confiam em nossa tecnologia</p>
+            </div>
+            
+            <div class="relative w-full flex overflow-hidden">
+                <!-- Gradientes laterais -->
+                <div class="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+                
+                <div class="animate-scroll flex items-center gap-16 md:gap-32 px-8">
+                    <!-- Set 1 -->
+                    <img src="./assets/img/clientes/logo-1.png" alt="Grupo O Boticário" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-2.png" alt="Drogasil" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-3.png" alt="COT Hospital" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-4.png" alt="BASF" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-5.png" alt="J. Macêdo" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-6.png" alt="Embasa" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-7.png" alt="Kimberly Clark" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-8.png" alt="Bridgestone" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    
+                    <!-- Set 2 (Cópia para efeito infinito) -->
+                    <img src="./assets/img/clientes/logo-1.png" alt="Grupo O Boticário" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-2.png" alt="Drogasil" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-3.png" alt="COT Hospital" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-4.png" alt="BASF" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-5.png" alt="J. Macêdo" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-6.png" alt="Embasa" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-7.png" alt="Kimberly Clark" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <img src="./assets/img/clientes/logo-8.png" alt="Bridgestone" class="h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Diferenciais -->
+        <section class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-blue translate-x-4 translate-y-4 rounded-xl"></div>
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Técnico realizando manutenção" class="relative z-10 w-full rounded-xl shadow-2xl object-cover h-[500px]">
+                        
+                        <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl z-20 border border-gray-100 hidden md:block">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-brand-accent p-3 rounded-full text-brand-dark">
+                                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-black text-brand-blue">30+</p>
+                                    <p class="text-sm font-bold text-gray-500 uppercase">Anos de Mercado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="text-brand-blue font-extrabold tracking-wider uppercase text-sm mb-2 block">Criada para proteger</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+                            Experiência de mais de duas décadas em excelência técnica.
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Em 1996, do ímpeto de transformar o cenário tecnológico de segurança patrimonial, nasce a Protecn Segurança Eletrônica, intrinsecamente determinada a cuidar, proteger e promover soluções inovadoras para empresas e residências.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-brand-blue">
+                                        <i data-lucide="check" class="w-5 h-5"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900">Atendimento Especializado</h4>
+                                    <p class="text-gray-600 mt-1">Profissionais qualificados para entender e mapear as vulnerabilidades do seu espaço.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-brand-blue">
+                                        <i data-lucide="check" class="w-5 h-5"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-gray-900">Suporte Técnico Ativo</h4>
+                                    <p class="text-gray-600 mt-1">Garantimos que seus sistemas funcionem 24 horas por dia, sem interrupções.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section id="servicos" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-brand-blue font-extrabold tracking-wider uppercase text-sm mb-2 block">Nossos Serviços</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6">Todas as soluções que você precisa em um só lugar.</h2>
+                    <p class="text-xl text-gray-600">Tecnologia de ponta implementada sob medida para a segurança e automação do seu negócio.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:border-brand-blue/30 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="cctv" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Monitoramento (CFTV)</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Sistema de captação e vídeo-vigilância através de câmeras digitais ou analógicas conectadas a uma rede central.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:border-brand-blue/30 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="door-open" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Portas Automáticas</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Ideais para locais com grandes fluxos. Garantem segurança, controle operacional e acessibilidade.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:border-brand-blue/30 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="zap" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Instalações Elétricas</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Planejamento e dimensionamento da rede elétrica conforme as normas técnicas para funcionamento seguro.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:border-brand-blue/30 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="flame" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Alarmes de Incêndio</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Sistemas inteligentes de detecção rápida para prevenção e preservação total do seu patrimônio contra incêndios.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:border-brand-blue/30 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="sliders-horizontal" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Automação de Acessos</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Controle rigoroso e automatizado de entradas e saídas, ideal para condomínios, empresas e indústrias.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 hover:border-brand-blue/30 hover:shadow-2xl transition-all duration-300 group">
+                        <div class="w-16 h-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="thermometer-snowflake" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Climatização</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Instalação e manutenção especializada de sistemas de ar condicionado, garantindo eficiência e conforto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Portfólio de Serviços (Estilo Grid do Instagram) -->
+        <section id="portfolio" class="py-24 bg-gray-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
+                    
+                    <!-- Lado Esquerdo: Texto Fixo -->
+                    <div class="lg:col-span-1">
+                        <div class="sticky top-32">
+                            <span class="text-brand-blue font-extrabold tracking-wider uppercase text-sm mb-2 block">Nosso Portfólio</span>
+                            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Veja alguns dos nossos serviços na prática</h2>
+                            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                                Acompanhe de perto a qualidade, o acabamento e o rigor técnico que aplicamos no dia a dia. Clique nas imagens para ver os detalhes das nossas execuções.
+                            </p>
+                            <div class="hidden lg:flex items-center gap-3 text-brand-accent font-bold">
+                                <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                                Explore nossa galeria
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lado Direito: Grid Estilo Instagram -->
+                    <div class="lg:col-span-2">
+                        <!-- Container gerado dinamicamente via JavaScript -->
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4" id="portfolio-gallery">
+                            <!-- Os itens serão injetados aqui -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Como Trabalhamos -->
+        <section class="py-24 bg-brand-dark text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Como implementamos sua segurança</h2>
+                    <p class="text-gray-400 text-lg">Um processo claro e eficiente, do primeiro contato até a entrega final.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                    <div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-gray-700 z-0"></div>
+                    
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full bg-brand-blue border-4 border-brand-dark flex items-center justify-center mb-6 shadow-xl text-brand-accent">
+                            <i data-lucide="search" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">1. Diagnóstico</h3>
+                        <p class="text-gray-400">Nossa equipe técnica avalia o local e mapeia todas as necessidades e vulnerabilidades.</p>
+                    </div>
+                    
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full bg-brand-blue border-4 border-brand-dark flex items-center justify-center mb-6 shadow-xl text-brand-accent">
+                            <i data-lucide="settings" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">2. Projeto e Instalação</h3>
+                        <p class="text-gray-400">Desenvolvemos o projeto sob medida e realizamos a instalação seguindo rigorosas normas técnicas.</p>
+                    </div>
+                    
+                    <div class="relative z-10 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full bg-brand-blue border-4 border-brand-dark flex items-center justify-center mb-6 shadow-xl text-brand-accent">
+                            <i data-lucide="shield" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">3. Manutenção</h3>
+                        <p class="text-gray-400">Oferecemos suporte contínuo e manutenções preventivas para garantir operação 100% do tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Segmentos Atendidos -->
+        <section class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-blue font-extrabold tracking-wider uppercase text-sm mb-2 block">Onde Atuamos</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Soluções adaptadas ao seu cenário</h2>
+                    <p class="text-lg text-gray-600">Entendemos as particularidades de cada ambiente para entregar o nível de segurança ideal.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-brand-blue mx-auto mb-4">
+                            <i data-lucide="building-2" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Condomínios</h3>
+                        <p class="text-sm text-gray-600">Controle de acesso rigoroso e monitoramento de áreas comuns.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-brand-blue mx-auto mb-4">
+                            <i data-lucide="store" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Comércio</h3>
+                        <p class="text-sm text-gray-600">Prevenção de perdas e segurança para clientes e colaboradores.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-brand-blue mx-auto mb-4">
+                            <i data-lucide="factory" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Indústrias</h3>
+                        <p class="text-sm text-gray-600">Sistemas robustos para proteção de grandes perímetros e maquinários.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-brand-blue mx-auto mb-4">
+                            <i data-lucide="home" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Residências</h3>
+                        <p class="text-sm text-gray-600">Tranquilidade e praticidade com automação residencial avançada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Dúvidas Frequentes (FAQ) -->
+        <section class="py-24 bg-white border-t border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Dúvidas Frequentes</h2>
+                    <p class="text-gray-600 text-lg">Respostas rápidas para as principais dúvidas de nossos clientes.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg p-6 bg-gray-50">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">A Protecn realiza manutenções em sistemas instalados por outras empresas?</h4>
+                        <p class="text-gray-600">Sim. Nossa equipe técnica realiza uma vistoria inicial minuciosa para entender a tecnologia atual, diagnosticar problemas e assumir a manutenção do sistema com garantia de qualidade.</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-6 bg-gray-50">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Qual o tempo de resposta para chamados de emergência?</h4>
+                        <p class="text-gray-600">Para clientes com contrato de manutenção preventiva e corretiva, oferecemos SLAs (Acordos de Nível de Serviço) agressivos, garantindo atendimento prioritário e rápido restabelecimento da segurança.</p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-6 bg-gray-50">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Os sistemas podem ser acompanhados pelo celular?</h4>
+                        <p class="text-gray-600">Sim! A maioria dos nossos sistemas de CFTV, alarmes e automação possuem integração com aplicativos mobile, permitindo que você acompanhe seu patrimônio de qualquer lugar do mundo, em tempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="bg-brand-accent py-20">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-6">Pronto para proteger o seu patrimônio?</h2>
+                <p class="text-brand-dark/80 text-xl mb-10 font-medium">Fale com nossa equipe técnica especializada e solicite um orçamento sem compromisso.</p>
+                <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="inline-flex bg-brand-dark text-white font-extrabold px-10 py-5 rounded-md hover:bg-gray-900 transition-colors shadow-2xl items-center gap-3 text-lg group">
+                    <svg class="w-6 h-6 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                    </svg>
+                    Entrar em Contato Agora
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal do Portfólio -->
+    <div id="portfolio-modal" class="fixed inset-0 z-[100] bg-black/95 hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300 backdrop-blur-sm">
+        
+        <!-- Botão de Fechar -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors z-50 p-2">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        
+        <!-- Conteúdo do Modal -->
+        <div class="relative w-full max-w-6xl flex flex-col items-center px-4 md:px-12">
+            
+            <!-- Container da Imagem com Setas Inseridas -->
+            <div class="relative w-full flex items-center justify-center group">
+                
+                <!-- Seta Voltar -->
+                <button onclick="prevImage(event)" class="absolute left-0 md:left-4 z-10 p-3 bg-black/50 hover:bg-brand-accent hover:text-brand-dark text-white rounded-full transition-all duration-300 transform -translate-y-1/2 top-1/2 opacity-80 hover:opacity-100">
+                    <i data-lucide="chevron-left" class="w-8 h-8 md:w-10 md:h-10"></i>
+                </button>
+                
+                <!-- Imagem -->
+                <img id="modal-image" src="" alt="Serviço Executado" class="max-w-full max-h-[65vh] object-contain rounded-md shadow-2xl transition-opacity duration-300">
+                
+                <!-- Seta Avançar -->
+                <button onclick="nextImage(event)" class="absolute right-0 md:right-4 z-10 p-3 bg-black/50 hover:bg-brand-accent hover:text-brand-dark text-white rounded-full transition-all duration-300 transform -translate-y-1/2 top-1/2 opacity-80 hover:opacity-100">
+                    <i data-lucide="chevron-right" class="w-8 h-8 md:w-10 md:h-10"></i>
+                </button>
+
+            </div>
+            
+            <!-- Caixa de Descrição -->
+            <div class="mt-6 md:mt-8 bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-3xl w-full text-center border border-white/20 shadow-xl">
+                <p id="modal-description" class="text-white text-lg md:text-xl font-medium leading-relaxed"></p>
+                <div class="mt-3 text-brand-accent text-sm font-bold tracking-widest uppercase">
+                    <span id="modal-counter">1</span> / <span id="modal-total">6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé (Recriado a partir do Print) -->
+    <footer class="bg-[#F8F9FA] text-gray-800 pt-16 pb-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
+                
+                <!-- Coluna 1: Protecn -->
+                <div>
+                    <h3 class="text-2xl font-black text-gray-900 tracking-tight mb-2">Protecn</h3>
+                    <p class="text-gray-600 mb-6 font-medium leading-tight">Segurança<br>eletrônica.</p>
+                    <img src="logo-protecn-icone.png" alt="Logo Protecn" class="w-20" onerror="this.src='https://placehold.co/100x100/002855/ffffff?text=Icon'">
+                </div>
+
+                <!-- Coluna 2: Sede -->
+                <div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-6">Sede</h4>
+                    <div class="text-gray-600 space-y-4 font-medium">
+                        <p>Rua Doutor José<br>Peroba, Stiep.</p>
+                        <p>(71) 9 9126-3452</p>
+                        <a href="mailto:protecnba@gmail.com" class="block hover:text-brand-blue transition-colors">protecnba@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Coluna 3: Redes Sociais -->
+                <div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-6">Redes Sociais</h4>
+                    <ul class="text-gray-600 space-y-4 font-medium">
+                        <li>
+                            <a href="https://www.instagram.com/protecn?stkn=NzR3Y3cyYzg4NjZt" target="_blank" rel="noopener noreferrer" class="hover:text-brand-blue transition-colors">
+                                Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4: Perguntas -->
+                <div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-6">Perguntas</h4>
+                    <p class="text-gray-600 font-medium leading-relaxed">
+                        Para qualquer pergunta,<br>
+                        dúvida ou comentário,<br>
+                        ligue para (71) 9 9126-3452.
+                    </p>
+                </div>
+
+                <!-- Coluna 5: Distribuidor -->
+                <div class="flex flex-col items-start">
+                    <h4 class="text-xl font-bold text-gray-900 mb-6">Distribuidor</h4>
+                    <img src="logo-magiporta.png" alt="MagiPorta" class="w-32 mb-8" onerror="this.src='https://placehold.co/200x80/001833/ffffff?text=MagiPorta'">
+                    <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3 rounded-[2rem] border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all duration-300">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                        </svg>
+                        Fale conosco
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Copyright Final -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-gray-200 pt-8 mt-8">
+                <p>
+                    © <span id="current-year"></span> Protecn Segurança Eletrônica. Todos os direitos reservados.
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-900 transition-colors">Política de Privacidade</a>
+                    <a href="#" class="hover:text-gray-900 transition-colors">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts da Página -->
+    <script>
+        // Inicializar os ícones do Lucide (os demais)
+        lucide.createIcons();
+
+        // Lógica do Menu Mobile
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if(menu.classList.contains('hidden')){
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        });
+
+        // Ano dinâmico no rodapé
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Efeito no scroll do Navbar
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.querySelector('.h-24').classList.replace('h-24', 'h-16'); 
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.querySelector('.h-16')?.classList.replace('h-16', 'h-24');
+            }
+        });
+
+        // ==========================================
+        // LÓGICA DO PORTFÓLIO (Galeria & Modal)
+        // ==========================================
+        
+        // Banco de Dados Temporário (Imagens e Descrições)
+        const portfolioData = [
+            { 
+                thumb: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=600&fit=crop', 
+                src: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=1200&q=80', 
+                desc: 'Instalação de Rack de Servidores e Cabeamento Estruturado para Data Center de alta performance.' 
+            },
+            { 
+                thumb: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=600&fit=crop', 
+                src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80', 
+                desc: 'Manutenção preventiva e corretiva em painéis elétricos industriais e controle de maquinário.' 
+            },
+            { 
+                thumb: 'https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&h=600&fit=crop', 
+                src: 'https://images.unsplash.com/photo-1563770660941-20978e870e26?w=1200&q=80', 
+                desc: 'Implementação de Sistema de Monitoramento (CFTV) em alta resolução para galpão logístico.' 
+            },
+            { 
+                thumb: 'https://images.unsplash.com/photo-1541884053564-9eb104f728fa?w=600&h=600&fit=crop', 
+                src: 'https://images.unsplash.com/photo-1541884053564-9eb104f728fa?w=1200&q=80', 
+                desc: 'Automatização de portas e portões com sistema inteligente de controle de acesso de funcionários.' 
+            },
+            { 
+                thumb: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=600&fit=crop', 
+                src: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&q=80', 
+                desc: 'Projeto e instalação completa de sistema de detecção e alarme de incêndio.' 
+            },
+            { 
+                thumb: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=600&fit=crop', 
+                src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80', 
+                desc: 'Configuração de Central de Comando e Automação Predial, unificando a gestão tecnológica.' 
+            }
+        ];
+
+        // 1. Renderizar as miniaturas na Galeria
+        const galleryContainer = document.getElementById('portfolio-gallery');
+        
+        portfolioData.forEach((item, index) => {
+            const itemHTML = `
+                <div class="relative group cursor-pointer aspect-square overflow-hidden rounded-xl shadow-sm border border-gray-100 bg-white" onclick="openModal(${index})">
+                    <img src="${item.thumb}" alt="Projeto ${index + 1}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <!-- Overlay Escuro no Hover -->
+                    <div class="absolute inset-0 bg-brand-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2">
+                        <div class="w-12 h-12 rounded-full bg-brand-accent text-brand-dark flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-300 delay-100">
+                            <i data-lucide="zoom-in" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+            `;
+            galleryContainer.innerHTML += itemHTML;
+        });
+        
+        // Re-inicializa os ícones gerados dinamicamente
+        lucide.createIcons();
+
+        // 2. Variáveis de Controle do Modal
+        let currentImageIndex = 0;
+        const modal = document.getElementById('portfolio-modal');
+        const modalImg = document.getElementById('modal-image');
+        const modalDesc = document.getElementById('modal-description');
+        const modalCounter = document.getElementById('modal-counter');
+        document.getElementById('modal-total').textContent = portfolioData.length;
+
+        // 3. Funções do Modal
+        function updateModalContent() {
+            // Efeito visual leve ao trocar a imagem
+            modalImg.style.opacity = '0';
+            setTimeout(() => {
+                modalImg.src = portfolioData[currentImageIndex].src;
+                modalDesc.textContent = portfolioData[currentImageIndex].desc;
+                modalCounter.textContent = currentImageIndex + 1;
+                modalImg.style.opacity = '1';
+            }, 150);
+        }
+
+        function openModal(index) {
+            currentImageIndex = index;
+            updateModalContent();
+            modal.classList.remove('hidden');
+            // Timeout necessário para o CSS Transition rodar após remover o 'hidden'
+            setTimeout(() => { 
+                modal.classList.remove('opacity-0'); 
+                modal.classList.add('opacity-100'); 
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Evita scroll do site de fundo
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+            document.body.style.overflow = 'auto'; // Devolve o scroll do site
+        }
+
+        function nextImage(e) {
+            if(e) e.stopPropagation(); // Evita que clique na seta feche o modal acidentalmente
+            currentImageIndex = (currentImageIndex + 1) % portfolioData.length;
+            updateModalContent();
+        }
+
+        function prevImage(e) {
+            if(e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + portfolioData.length) % portfolioData.length;
+            updateModalContent();
+        }
+
+        // 4. Fechar Modal clicando na parte escura (fora da imagem)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 5. Suporte para Navegação por Teclado (Acessibilidade)
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+            }
+        });
+    </script>
+</body>
+</html>
