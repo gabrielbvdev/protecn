@@ -6,18 +6,22 @@
     <title>Protecn Segurança e Automação | Contato</title>
     <meta name="description" content="Fale com a Protecn. Solicite um orçamento ou agende uma visita técnica.">
     
+    <!-- Favicons Inteligentes baseados no tema -->
+    <link rel="icon" href="./assets/img/SIGNO_ESCURO.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="./assets/img/SIGNO_CLARO.svg" media="(prefers-color-scheme: dark)">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Ícones (Lucide) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Configuração do Tailwind e CSS Customizado -->
+    <!-- Configuração do Tailwind 100% fiel ao Redesign -->
     <script>
         tailwind.config = {
             theme: {
@@ -27,27 +31,32 @@
                     },
                     colors: {
                         brand: {
-                            blue: '#002855',
-                            light: '#003F88',
-                            dark: '#001833',
-                            accent: '#F2A900',
+                            blue: '#004BDB',  // Azul Vibrante (novo principal)
+                            dark: '#051A35',  // Azul Marinho Profundo (texto e fundos escuros)
+                            light: '#E6F0FF', // Fundo azul bem suave
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Overlay gradiente unificado para a imagem principal, idêntico ao index */
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(5, 26, 53, 0.95) 0%, rgba(0, 75, 219, 0.7) 100%);
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Navegação (Idêntica, mas com "Contato" ativo) -->
+    <!-- Navegação -->
     <nav class="bg-white/95 backdrop-blur-md fixed w-full z-50 border-b border-gray-200 transition-all duration-300 shadow-sm" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24 transition-all duration-300">
-                <!-- Logo -->
+                <!-- Logo Oficial Redesign -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="text-3xl font-extrabold text-brand-blue tracking-tight">
-                        PROTECN<span class="text-brand-accent">.</span>
+                    <a href="index.html" class="flex items-center">
+                        <img src="./assets/img/LOGOTIPO_ESCURA.svg" alt="Protecn Proteção e Tecnologia" class="h-8 md:h-10 object-contain">
                     </a>
                 </div>
 
@@ -55,10 +64,10 @@
                 <div class="hidden md:flex items-center space-x-10">
                     <a href="index.html" class="text-gray-600 font-medium hover:text-brand-blue transition-colors">Início</a>
                     <a href="sobre.html" class="text-gray-600 font-medium hover:text-brand-blue transition-colors">Quem Somos</a>
-                    <a href="contato.html" class="text-brand-blue font-bold hover:text-brand-accent transition-colors">Contato</a>
+                    <a href="contato.html" class="text-brand-blue font-bold transition-colors">Contato</a>
                     
                     <!-- Botão WhatsApp Navbar -->
-                    <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-white px-6 py-3 rounded-md font-bold hover:bg-brand-light transition-colors shadow-md flex items-center gap-2 group">
+                    <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="bg-brand-blue text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition-colors shadow-md flex items-center gap-2 group">
                         <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                         </svg>
@@ -68,7 +77,7 @@
 
                 <!-- Botão Menu Mobile -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-brand-blue hover:text-brand-accent focus:outline-none p-2">
+                    <button id="mobile-menu-button" class="text-brand-blue hover:text-blue-700 focus:outline-none p-2">
                         <i data-lucide="menu" class="w-8 h-8"></i>
                     </button>
                 </div>
@@ -80,9 +89,9 @@
             <div class="px-4 pt-4 pb-8 space-y-3">
                 <a href="index.html" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Início</a>
                 <a href="sobre.html" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brand-blue">Quem Somos</a>
-                <a href="contato.html" class="block px-4 py-3 rounded-md text-base font-bold text-brand-blue bg-blue-50">Contato</a>
+                <a href="contato.html" class="block px-4 py-3 rounded-md text-base font-bold text-brand-blue bg-brand-light">Contato</a>
                 
-                <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="block w-full text-center mt-6 bg-brand-blue text-white px-5 py-4 rounded-md font-bold hover:bg-brand-light shadow-md flex justify-center items-center gap-2">
+                <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="block w-full text-center mt-6 bg-brand-blue text-white px-5 py-4 rounded-md font-bold hover:bg-blue-700 shadow-md flex justify-center items-center gap-2">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
                     </svg>
@@ -94,16 +103,23 @@
 
     <main class="flex-grow pt-24">
         
-        <!-- Cabeçalho Interno -->
-        <section class="bg-brand-dark py-20 border-b border-gray-800 relative overflow-hidden">
-            <!-- Padrão geométrico suave no fundo -->
-            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <!-- Cabeçalho Interno com Degradê Novo -->
+        <section class="relative bg-brand-dark text-white py-24 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1541884053347-920f0ffdf64e?auto=format&fit=crop&w=2000&q=80" alt="Suporte Técnico" class="w-full h-full object-cover opacity-30 mix-blend-overlay" />
+            </div>
+            <!-- Overlay gradiente idêntico ao da Home -->
+            <div class="absolute inset-0 hero-overlay z-0"></div>
+            
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+                <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-brand-light font-bold tracking-wider uppercase text-xs mb-4 border border-white/20">
+                    Atendimento
+                </span>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
                     Fale Conosco
                 </h1>
-                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-                    Nossa equipe técnica comercial está pronta para atender sua demanda. Solicite orçamentos, manutenções ou agende uma visita.
+                <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto font-light">
+                    Nossa equipe técnica e comercial está pronta para atender sua demanda. Tire suas dúvidas, solicite orçamentos ou agende uma visita técnica.
                 </p>
             </div>
         </section>
@@ -112,23 +128,24 @@
         <section class="py-16 md:py-32 bg-gray-50 relative z-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="max-w-5xl mx-auto bg-brand-blue p-8 md:p-12 lg:p-16 text-white flex flex-col justify-between relative overflow-hidden rounded-3xl shadow-2xl">
-                    <!-- Círculos decorativos no fundo azul -->
-                    <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-light rounded-full opacity-50"></div>
-                    <div class="absolute top-12 -left-12 w-32 h-32 bg-brand-accent rounded-full opacity-20"></div>
+                <!-- Painel agora utiliza o brand-dark (Azul Marinho Profundo) para resolver a queixa de ser "muito claro" -->
+                <div class="max-w-5xl mx-auto bg-brand-dark p-8 md:p-12 lg:p-16 text-white flex flex-col justify-between relative overflow-hidden rounded-3xl shadow-2xl">
+                    <!-- Círculos decorativos -->
+                    <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-blue rounded-full opacity-20"></div>
+                    <div class="absolute top-12 -left-12 w-32 h-32 bg-brand-light rounded-full opacity-5"></div>
 
                     <div class="relative z-10 text-center mb-12 md:mb-16">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Central de Atendimento</h2>
-                        <p class="text-blue-100 text-lg max-w-2xl mx-auto">Escolha o canal de sua preferência para falar com nossa equipe de especialistas.</p>
+                        <p class="text-blue-200 text-lg max-w-2xl mx-auto">Escolha o canal de sua preferência para falar com nossa equipe de especialistas.</p>
                     </div>
                     
                     <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
                         
-                        <!-- Instagram (No lugar do endereço) -->
+                        <!-- Instagram (Substituindo o antigo bloco de endereço) -->
                         <div class="flex items-start gap-5">
                             <div class="bg-white/10 p-4 rounded-xl flex-shrink-0 shadow-lg">
-                                <!-- Ícone SVG nativo do Instagram -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-brand-accent">
+                                <!-- SVG Inline para o Instagram garantindo carregamento -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-brand-blue">
                                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
@@ -136,9 +153,9 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2">Instagram</h4>
-                                <p class="text-blue-100 font-light mb-3 text-lg">@protecn</p>
-                                <a href="https://www.instagram.com/protecn?stkn=NzR3Y3cyYzg4NjZt" target="_blank" class="inline-flex items-center gap-2 px-5 py-2 bg-brand-accent text-brand-dark font-bold rounded-lg hover:bg-yellow-400 transition-colors shadow-md group">
-                                    Siga-nos<i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                                <p class="text-blue-100 font-light mb-3 text-lg">Acompanhe nossos serviços</p>
+                                <a href="https://www.instagram.com/protecn?stkn=NzR3Y3cyYzg4NjZt" target="_blank" class="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white font-bold rounded-lg hover:opacity-90 transition-opacity shadow-md group">
+                                    Seguir @protecn <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                                 </a>
                             </div>
                         </div>
@@ -146,12 +163,12 @@
                         <!-- Telefone / WhatsApp -->
                         <div class="flex items-start gap-5">
                             <div class="bg-white/10 p-4 rounded-xl flex-shrink-0 shadow-lg">
-                                <i data-lucide="phone" class="w-8 h-8 text-brand-accent"></i>
+                                <i data-lucide="phone" class="w-8 h-8 text-brand-blue"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2">Telefone</h4>
                                 <p class="text-blue-100 font-light mb-3 text-lg">(71) 9 9126-3452</p>
-                                <a href="https://wa.me/5571991263452" target="_blank" class="inline-flex items-center gap-2 px-5 py-2 bg-brand-accent text-brand-dark font-bold rounded-lg hover:bg-yellow-400 transition-colors shadow-md group">
+                                <a href="https://wa.me/5571991263452" target="_blank" class="inline-flex items-center gap-2 px-5 py-2 bg-[#25D366] text-white font-bold rounded-lg hover:bg-[#20b858] transition-colors shadow-md group">
                                     Chamar no WhatsApp <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                                 </a>
                             </div>
@@ -160,24 +177,28 @@
                         <!-- E-mail -->
                         <div class="flex items-start gap-5">
                             <div class="bg-white/10 p-4 rounded-xl flex-shrink-0 shadow-lg">
-                                <i data-lucide="mail" class="w-8 h-8 text-brand-accent"></i>
+                                <i data-lucide="mail" class="w-8 h-8 text-brand-blue"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2">E-mail</h4>
-                                <a href="mailto:protecnba@gmail.com" class="text-blue-100 font-light hover:text-white transition-colors text-lg block mb-1">protecnba@gmail.com</a>
+                                <p class="text-blue-100 font-light mb-3 text-lg">Nosso e-mail corporativo</p>
+                                <a href="mailto:protecnba@gmail.com" class="inline-flex items-center gap-2 px-5 py-2 bg-white/10 text-white hover:bg-white/20 font-medium rounded-lg transition-colors shadow-md">
+                                    protecnba@gmail.com
+                                </a>
                             </div>
                         </div>
                         
                         <!-- Horário -->
                         <div class="flex items-start gap-5">
                             <div class="bg-white/10 p-4 rounded-xl flex-shrink-0 shadow-lg">
-                                <i data-lucide="clock" class="w-8 h-8 text-brand-accent"></i>
+                                <i data-lucide="clock" class="w-8 h-8 text-brand-blue"></i>
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold mb-2">Horário de Atendimento</h4>
                                 <p class="text-blue-100 font-light text-lg">Segunda à Sexta<br>das 08h às 18h.</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -186,15 +207,15 @@
 
     </main>
 
-    <!-- Rodapé (Idêntico ao restante do site) -->
-    <footer class="bg-[#F8F9FA] text-gray-800 pt-16 pb-8 border-t border-gray-200">
+    <!-- Rodapé Redesign -->
+    <footer class="bg-[#F8F9FA] text-gray-800 pt-16 pb-8 border-t border-brand-blue border-t-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
                 
                 <div>
-                    <h3 class="text-2xl font-black text-gray-900 tracking-tight mb-2">Protecn</h3>
+                    <!-- Logo no rodapé -->
+                    <img src="./assets/img/SIGNO_ESCURO.svg" alt="Signo Protecn" class="w-16 mb-4 object-contain">
                     <p class="text-gray-600 mb-6 font-medium leading-tight">Segurança<br>eletrônica.</p>
-                    <img src="logo-protecn-icone.png" alt="Logo Protecn" class="w-20" onerror="this.src='https://placehold.co/100x100/002855/ffffff?text=Icon'">
                 </div>
 
                 <div>
@@ -211,7 +232,7 @@
                     <ul class="text-gray-600 space-y-4 font-medium">
                         <li>
                             <a href="https://www.instagram.com/protecn?stkn=NzR3Y3cyYzg4NjZt" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-brand-blue transition-colors">
-                                <!-- Ícone SVG nativo do Instagram para o rodapé -->
+                                <!-- SVG Inline para o Instagram do Rodapé -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -234,8 +255,8 @@
 
                 <div class="flex flex-col items-start">
                     <h4 class="text-xl font-bold text-gray-900 mb-6">Distribuidor</h4>
-                    <!-- Link correto para a logo da MagiPorta -->
-                    <img src="./assets/img/magi-porta.png" alt="MagiPorta" class="w-32 mb-8" onerror="this.src='https://placehold.co/200x80/001833/ffffff?text=MagiPorta'">
+                    <!-- Link da logo da MagiPorta -->
+                    <img src="./assets/img/magi-porta.png" alt="MagiPorta" class="w-32 mb-8" onerror="this.src='https://placehold.co/200x80/051A35/ffffff?text=MagiPorta'">
                     <a href="https://wa.me/5571991263452" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3 rounded-[2rem] border-2 border-gray-900 text-gray-900 font-bold hover:bg-gray-900 hover:text-white transition-all duration-300">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
